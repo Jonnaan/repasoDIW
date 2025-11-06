@@ -1,0 +1,232 @@
+* {
+  margin: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+
+}
+header {
+  position: sticky;
+  background-color: black;
+  display: flex;
+  width: 100%;
+  height: 15vh;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+}
+.iconos {
+  width: 80px;
+  height: 80px;
+  color: #fff;
+  padding: 20px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 100%   ;
+  margin-right: 50%;
+  transition: box-shadow 0.2s ease;
+}
+
+.search-input {
+  flex: 1;
+  border: 1px solid;
+  border-radius: 8px;
+  font-size: 15px;
+  padding: 6px;
+
+}
+
+.search-btn {
+  background: #007bff;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  visibility: hidden;
+}
+
+
+.contenedor{
+    background-image: url(../assets/img/bookshop-5870155.jpg);
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+     height: 90vh;
+
+}
+.contenedor section {
+    background-color: rgba(0, 0, 0, 0.041);
+    backdrop-filter: blur(5px);
+    padding: 50px;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+}
+.contenedor section button {
+    margin-top: 10px;
+    background-color: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 0px;
+    outline: 0px;
+    color: #fff;
+}
+.contenedor section p {
+padding: 20px;
+}
+.navegacion{
+    padding: 10px;
+    background-color: rgb(235, 232, 232)
+    
+}
+.navegacion ul{
+    display: flex;
+    overflow-x: scroll;
+    gap: 15px;         
+    list-style: none;    
+    padding: 0;
+    margin: 0;
+}
+.navegacion ul li{
+    background-color: rgba(210, 216, 218, 0.842);
+    border-radius: 20px;
+    padding: 8px;
+}
+.cardContainer{
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.card{
+    border-radius: 10px;
+    box-shadow: 3px 2px 2px rgba(59, 59, 59, 0.308);
+    padding: 10px;
+    margin: 10px;
+    line-height: 2;
+    padding-bottom: 80px;
+}
+.card{
+    border-radius: 10px;
+    box-shadow: 3px 2px 2px rgba(59, 59, 59, 0.308);
+    padding: 10px;
+    margin: 10px;
+    line-height: 2;
+    padding-bottom: 80px;
+}
+.card:hover{
+    transform: scale(1.05);
+}
+.card button{
+  width: 100%;
+  background: #007bff;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease; 
+}
+.card p{
+    color: rgb(13, 160, 45);
+    font-weight: bold ;
+}
+.cardImg{
+    width: 300px;
+    height: 450px;
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(0, 0, 26);
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px  ;
+}
+footer ul{
+    justify-content: center;
+    display: flex;
+    gap: 20px  ;
+}
+
+/* ≥ 1025px: 5 tarjetas por fila, buscador visible con anchura máxima de 700px.
+600–1024px: 3 tarjetas por fila, buscador al 100%.
+< 600px: 1 tarjeta por fila, lupa para mostrar/ocultar el buscador debajo; el carrito se mantiene a la derecha. */
+
+@media (min-width: 1025px) {
+    /* quitar el margin right de .search-container */
+
+  .cardContainer {
+    justify-content: space-between;
+  }
+  
+  .card {
+    flex: 0 0 calc(20% - 20px);
+  }
+  
+  .search-container {
+    width: 700px;
+    visibility: visible;
+  }
+}
+@media (min-width: 600px) and (max-width: 1024px) {
+        .search-container {
+      margin-right: 0;
+    }
+  .cardContainer {
+    justify-content: space-around;
+  }
+  
+  .card {
+    flex: 0 0 calc(33.33% - 20px);
+  }
+  
+  .search-container {
+    width: 100%;
+    visibility: visible;
+  }
+}
+@media (max-width: 599px) {
+        .search-container {
+      margin-right: 0;
+    }
+  .cardContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card {
+    flex: 0 0 80%;
+  }
+  
+  .search-container {
+    width: 100%;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+  
+  .search-btn {
+    visibility: visible;
+  }
+}
