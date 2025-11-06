@@ -222,11 +222,34 @@ footer ul{
   
   .search-container {
     width: 100%;
-    flex-direction: column;
-    margin-top: 10px;
+    flex-direction: column-reverse;
+    gap: 10px;
   }
-  
+  .search-input {
+    display: none;
+    top: 50px;
+
+  }
   .search-btn {
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
     visibility: visible;
   }
+  /* Oculta */
+.search-input.hidden {
+  max-height: 0;
+  padding: 0;
+  border: none;
+  overflow: hidden;
 }
+
+/* Muestra */
+.open .search-input {
+  max-height: 100px;
+  padding: 6px;
+  visibility: visible;
+  display: block;
+}
+}
+
