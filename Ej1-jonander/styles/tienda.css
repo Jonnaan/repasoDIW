@@ -86,7 +86,14 @@ header {
     border: 0px;
     outline: 0px;
     color: #fff;
+    cursor: pointer;
 }
+.contenedor section button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    transform: scale(1.05);
+}
+
 .contenedor section p {
 padding: 20px;
 }
@@ -145,6 +152,10 @@ padding: 20px;
   cursor: pointer;
   transition: background 0.2s ease; 
 }
+.card button:hover{
+  color: black;
+
+}
 .card p{
     color: rgb(13, 160, 45);
     font-weight: bold ;
@@ -195,7 +206,8 @@ footer ul{
       margin-right: 0;
     }
   .cardContainer {
-    justify-content: space-around;
+    justify-content: flex-end;
+    align-items: center;
   }
   
   .card {
