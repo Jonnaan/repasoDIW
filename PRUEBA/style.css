@@ -1,0 +1,60 @@
+/* ======== ESTILOS GENERALES ======== */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+
+font-family: 'Poppins', 'Segoe UI', 'Roboto', Arial, sans-serif;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+/* ======== GRID PRINCIPAL ======== */
+body {
+  display: grid; /* Activa CSS Grid */
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas iguales */
+  grid-template-rows: repeat(2, 1fr);    /* 2 filas iguales */
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  width: 100vw;  /* Ocupa todo el ancho de la pantalla */
+}
+
+/* ======== ESTILOS DE CADA DIV ======== */
+.contenedor1, .contenedor2, .contenedor3, .contenedor4 {
+  display: flex; /* Centra el texto dentro del div */
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  border: #333 2px solid;
+}
+
+/* ======== COLORES INDIVIDUALES ======== */
+.contenedor1 { background-color: #e57373; } /* rojo suave */
+.contenedor2 { background-color: #64b5f6; } /* azul suave */
+.contenedor3 { background-color: #81c784; } /* verde suave */
+.contenedor4 { background-color: #ffd54f; color: #333; } /* amarillo suave */
+
+/* ======== EFECTO AL PASAR EL RATÓN ======== */
+.contenedor1:hover,
+.contenedor2:hover,
+.contenedor3:hover,
+.contenedor4:hover {
+  filter: brightness(1.1);
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+/* ======== AJUSTE RESPONSIVO ======== */
+@media (max-width: 700px) {
+  body {
+    grid-template-columns: 1fr; /* Una columna */
+    grid-template-rows: repeat(4, 1fr); /* Cuatro filas */
+  }
+}
+.contenedor1, .contenedor2, .contenedor3, .contenedor4 {
+  font-size: 1.5rem; 
+}

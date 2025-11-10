@@ -1,0 +1,154 @@
+/* ==== Layout general ==== */
+.wrap {
+  display: grid;
+  gap: 1.5rem;
+  min-height: 100vh;
+  background-color: #f1f4fb;
+
+  /* Layout escritorio ≥ 1025px */
+  grid-template-columns: 240px 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* ==== Header ==== */
+.head {
+  grid-column: 1 / 5; /* ocupa todo el ancho */
+  grid-row: 1;
+  background: #0b132b;
+  color: #fff;
+  font-weight: 600;
+  padding: 1.25rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* ==== Sidebar ==== */
+.side {
+  grid-column: 1;
+  grid-row: 2 / 4; /* ocupa filas 2 y 3 */
+  background: #fff;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.08);
+  border: #0b132b 1px solid;
+}
+
+/* ==== Lista de eventos ==== */
+.list {
+  grid-column: 2 / 5; /* columnas 2 a 4 */
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* tres columnas fijas */
+  gap: 1rem;
+  
+}
+
+.it {
+  background: #fff;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  min-height: 120px; /* igual altura visual */
+  display: flex;
+  align-items: flex-start;
+  transition: transform 0.2s;
+   border: #0b132b 1px solid;
+}
+.it:hover {
+  transform: translateY(-4px);
+}
+
+/* ==== Panel de detalles ==== */
+.detail {
+  grid-column: 2 / 5;
+  grid-row: 3;
+  background: #fff;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.08);
+   border: #0b132b 1px solid;
+}
+
+/* ==== Botón flotante ==== */
+.fab {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s, background 0.2s;
+}
+.fab:hover {
+  background: #1e40af;
+  transform: scale(1.05);
+}
+
+/* ==== Responsividad ==== */
+
+/* --- Tablet (600px–1024px) --- */
+@media (max-width: 1024px) and (min-width: 600px) {
+  .wrap {
+    grid-template-columns: 220px 1fr 1fr;
+  }
+
+  .head {
+    grid-column: 1 / 4;
+  }
+
+  .side {
+    grid-column: 1;
+    grid-row: 2 / 4;
+  }
+
+  .list {
+    grid-column: 2 / 4;
+    grid-row: 2;
+    grid-template-columns: repeat(2, 1fr); /* dos columnas en tablet */
+  }
+
+  .detail {
+    grid-column: 2 / 4;
+    grid-row: 3;
+  }
+}
+
+/* --- Móvil (<600px) --- */
+@media (max-width: 599px) {
+  .wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .head {
+    grid-column: 1;
+  }
+
+  .side {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .list {
+    grid-column: 1;
+    grid-row: 3;
+    grid-template-columns: 1fr; /* una columna */
+  }
+
+  .detail {
+    grid-column: 1;
+    grid-row: 4;
+  }
+
+  .fab {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}

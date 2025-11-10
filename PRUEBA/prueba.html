@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librería Jakin</title>
+    <link rel="stylesheet" href="prueba.css">
+</head>
+<body>
+
+    <!-- 1. Encabezado Fijo -->
+    <header class="main-header">
+    <div class="header-content">
+        
+        <div class="logo">
+            <!-- TUS IMAGENES RESTAURADAS -->
+            <img src="../Ej1-jonander/assets/logo/logoJakin.png" alt="logo">
+        </div>
+
+        <!-- 
+          NOTA: AÑADIDO. Este botón es necesario para el
+          requisito de la media query de < 600px y para que tu script funcione.
+        -->
+        <button class="search-toggle" aria-label="Abrir búsqueda">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+
+        <form class="search-bar">
+                <input type="text" placeholder="Busca por título o autor">
+            </form>
+        
+        <div class="cart">
+             <!-- Icono SVG en lugar de emoji -->
+            <a href="#" aria-label="Carrito de compras">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+            </a>
+        </div>
+
+        </div>
+    </header>
+
+    <!-- 2. Tira de Categorías (Scrollable) -->
+    <nav class="categories-nav">
+        <ul>
+            <li><a href="#">Ficción</a></li>
+            <li><a href="#">Ensayo</a></li>
+            <li><a href="#">Cómic</a></li>
+            <li><a href="#">Infantil</a></li>
+            <li><a href="#">Ciencia</a></li>
+            <li><a href="#">Histórica</a></li>
+            <li><a href="#">Tecnología</a></li>
+            <!-- He añadido los que faltaban para el scroll -->
+            <li><a href="#">Biografías</a></li>
+            <li><a href="#">Poesía</a></li>
+            <li><a href="#">Viajes</a></li>
+        </ul>
+    </nav>
+
+    <!-- 3. Hero "Destacado" (Cumple el requisito de texto centrado) -->
+    <section class="hero" style="background-image: url('../Ej1-jonander/assets/img/bookshop-5870155.jpg');">
+        <div class="hero-content">
+            <h2>Novedades de Otoño</h2>
+            <p>Descubre las historias que te atraparán esta temporada.</p>
+            <a href="#" class="cta-button">Ver colección</a>
+        </div>
+    </section>
+
+    <!-- 4. Listado de Productos (Tu nueva clase .product-grid) -->
+    <main class="product-grid">
+
+        <!-- Producto 1 -->
+        <div class="product-card">
+            <!-- TUS IMAGENES RESTAURADAS -->
+            <img src="../Ej1-jonander/assets/img/elViajeDeAda.png" alt="El Viaje de Ada">
+            <h3>El Viaje de Ada</h3>
+            <p class="price">14,95 €</p>
+            <button class="add-button">Añadir</button>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="product-card">
+            <!-- TUS IMAGENES RESTAURADAS -->
+            <img src="../Ej1-jonander/assets/img/historiasPixeladas.png" alt="Historias Pixeladas">
+            <h3>Historias Pixeladas</h3>
+            <p class="price">16,50 €</p>
+            <button class="add-button">Añadir</button>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="product-card">
+            <!-- TUS IMAGENES RESTAURADAS -->
+            <img src="../Ej1-jonander/assets/img/bitacoraCuantica.png" alt="Bitácora Cuántica">
+            <h3>Bitácora Cuántica</h3>
+            <p class="price">19,90 €</p>
+            <button class="add-button">Añadir</button>
+        </div>
+
+        <!-- Producto 4 -->
+        <div class="product-card">
+            <!-- TUS IMAGENES RESTAURADAS -->
+            <img src="../Ej1-jonander/assets/img/mapasDelCosmos.png" alt="Mapas del Cosmos">
+            <h3>Mapas del Cosmos</h3>
+            <p class="price">22,00 €</p>
+            <button class="add-button">Añadir</button>
+        </div>
+
+        <!-- Producto 5 -->
+        <div class="product-card">
+            <!-- TUS IMAGENES RESTAURADAS -->
+            <img src="../Ej1-jonander/assets/img/eticaParaHumanos.png" alt="Ética para Humanos">
+            <h3>Ética para Humanos</h3>
+            <p class="price">12,95 €</p>
+            <button class="add-button">Añadir</button>
+        </div>
+
+        <!-- Eliminado el producto 6 que yo había añadido -->
+
+    </main>
+
+    <!-- 5. Pie de Página -->
+    <footer class="main-footer">
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="#">© 2025 Librería Jakin</a></li>
+                <li><a href="#">Envíos y Devoluciones</a></li>
+                <li><a href="#">Aviso Legal</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <!-- Tu script (sin cambios, ahora funcionará) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchToggle = document.querySelector('.search-toggle');
+            const searchBar = document.querySelector('.search-bar');
+            
+            if (searchToggle && searchBar) {
+                searchToggle.addEventListener('click', function() {
+                    // Alterna la clase 'is-visible' en el header para mostrar/ocultar el buscador
+                    document.querySelector('.main-header').classList.toggle('search-visible');
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

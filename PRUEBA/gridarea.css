@@ -1,0 +1,84 @@
+/* ======== ESTILOS GENERALES ======== */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* ======== GRID PRINCIPAL ======== */
+.parent {
+  display: grid; /* Activa CSS Grid */
+  height: 100vh; /* Ocupa toda la ventana */
+  width: 100vw;
+
+  /* ======== DEFINICIÓN DE LA REJILLA ======== */
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
+  grid-template-rows: repeat(2, 1fr);    /* 2 filas iguales */
+
+  /* ======== ASIGNACIÓN DE ÁREAS ======== */
+  grid-template-areas:
+    "div1 div2 div3 div4"
+    "div5 div6 div7 div8";
+
+  /* Espacio entre elementos */
+  gap: 5px;
+}
+
+/* ======== ESTILOS COMUNES PARA TODAS LAS CAJAS ======== */
+.parent > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* ======== COLORES Y ASIGNACIÓN DE ÁREAS ======== */
+.div1 { background-color: #e57373; grid-area: div1; } /* rojo */
+.div2 { background-color: #f06292; grid-area: div2; } /* rosa */
+.div3 { background-color: #ba68c8; grid-area: div3; } /* violeta */
+.div4 { background-color: #64b5f6; grid-area: div4; } /* azul */
+.div5 { background-color: #4db6ac; grid-area: div5; } /* verde azulado */
+.div6 { background-color: #81c784; grid-area: div6; } /* verde */
+.div7 { background-color: #ffd54f; color: #333; grid-area: div7; } /* amarillo */
+.div8 { background-color: #ff8a65; grid-area: div8; } /* naranja */
+
+/* ======== EFECTO HOVER ======== */
+.parent > div:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+  cursor: pointer;
+}
+
+/* ======== AJUSTE RESPONSIVO ======== */
+@media (max-width: 800px) {
+  .parent {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+      "div1 div2"
+      "div3 div4"
+      "div5 div6"
+      "div7 div8";
+  }
+}
+
+@media (max-width: 500px) {
+  .parent {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-areas:
+      "div1"
+      "div2"
+      "div3"
+      "div4"
+      "div5"
+      "div6"
+      "div7"
+      "div8";
+  }
+}
