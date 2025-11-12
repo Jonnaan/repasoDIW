@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista dinámica</title>
+</head>
+<body>
+    <!-- Ejercicio 1: Datalist -->
+    <h2>Ejercicio 1 -- Datalist</h2>
+    <form>
+        <label for="pais">Selecciona tu país:</label>
+        <input list="paises" id="pais" name="pais">
+        <datalist id="paises">
+            <option value="España">
+            <option value="Francia">
+            <option value="Alemania">
+            <option value="Italia">
+            <option value="Portugal">
+        </datalist>
+        <br>
+        <button type="submit">Enviar</button>
+    </form>
+    <hr>
+    <!-- Ejercicio 2: Files -->
+    <h2>Ejercicio 2 -- Files</h2>
+    <form>
+       <label for="imagen">Sube una imagen:</label>
+       <input type="file" id="imagen" name="imagen" accept="image/*" capture="environment">
+       <br>
+       <button type="submit">Enviar</button>
+   </form>
+   <hr>
+   <!-- Ejercicio 3: Diálogo -->
+    <h2>Ejercicio 3 -- Dialog</h2>
+    <button id="abrirDialogo">Abrir Diálogo</button>
+
+    <dialog id="miDialogo">
+        <p>Esto es un dialogo</p>
+        <button id="cerrarDialogo">Cerrar</button>
+    </dialog>
+
+    <script>
+        const dialogo = document.getElementById("miDialogo");
+        const btnAbrir = document.getElementById("abrirDialogo");
+        const btnCerrar = document.getElementById("cerrarDialogo");
+
+        btnAbrir.addEventListener("click", () => {
+            dialogo.showModal();
+        });
+
+        btnCerrar.addEventListener("click", () => {
+            dialogo.close();
+        });
+    </script>
+    <hr>
+    <!-- Ejercicio 4: Details , Summary -->
+    <h2>Ejercicio 4 -- Details</h2>
+    <h3>FAQ</h3>
+    <details>
+        <summary>¿Cuál es la población de Bilbao?</summary>
+        <p>La población de Bilbao es de aproximadamente 345,000 habitantes.</p>
+    </details>
+    <details>
+        <summary>¿Es una ciudad segura?</summary>
+        <p>Bilbao es considerada una ciudad segura, con bajos índices de criminalidad en comparación con otras ciudades europeas.</p>
+    </details>
+    <details>
+        <summary>¿Es mejor que Donosti?</summary>
+        <p>Bilbao y Donosti (San Sebastián) son dos ciudades vascas con características distintas. Donosti es famosa por su playa y su festival de cine, mientras que Bilbao destaca por su arquitectura moderna y el Museo Guggenheim, por lo que es muchísimo mejor.</p>
+    </details>
+    <hr>
+    <!-- Ejercicio 5: Popover -->
+    <h2>Ejercicio 5 -- Popover</h2>
+    <button id="miBotonPopover">Mostrar Popover</button>
+    <div id="miPopover" style="display:none; border:1px solid black; background-color:white; padding:10px; position:absolute;">
+        <p>Este es un popover</p>
+        <button id="cerrarPopover">Cerrar</button>
+    </div>
+
+    <script>
+        const botonPopover = document.getElementById("miBotonPopover");
+        const popover = document.getElementById("miPopover");
+        const btnCerrarPopover = document.getElementById("cerrarPopover");
+
+        botonPopover.addEventListener("click", () => {
+            popover.style.display = "block";
+        });
+
+        btnCerrarPopover.addEventListener("click", () => {
+            popover.style.display = "none";
+        });
+    </script>
+    <hr>
+    <!-- Ejercicio 6: Search -->
+    <h2>Ejercicio 6 -- Search</h2>
+    <form role="search">
+        <label for="buscar">Buscar:</label>
+        <input type="search" id="buscar" name="buscar" placeholder="Introduce un término de búsqueda">
+        <br>
+        <button type="reset">Limpiar</button>
+        <button type="submit">Buscar</button>
+    </form>
+    <hr>
+    <!-- Ejercicio 7: Progress -->
+    <h2>Ejercicio 7 -- Progress</h2>
+    <form>
+        <label for="archivo">Sube un archivo:</label>
+        <input type="file" id="archivo" name="archivo">
+        <br>
+        <progress id="progreso" value="0" max="100" style="width:300px;"></progress>
+        <br>
+    </form>
+
+    <script>
+        const progreso = document.getElementById("progreso");
+        const archivoInput = document.getElementById("archivo");
+
+        archivoInput.addEventListener("change", () => {
+            let valor = 0;
+            progreso.value = valor;
+            const intervalo = setInterval(() => {
+                if (valor >= 100) {
+                    clearInterval(intervalo);
+                } else {
+                    valor += 10;
+                    progreso.value = valor;
+                }
+            }, 500);
+        });
+    </script>
+    <hr>
+    <!-- Ejercicio 8: Meter -->
+    <h2>Ejercicio 8 -- Meter</h2>
+
+    <meter id="nivelBateria" value="10" min="0" max="100" low="20" high="80" optimum="100"></meter>
+    <button id="cargarBateria">Cargar Batería</button>
+
+    <script>
+        const meter = document.getElementById("nivelBateria");
+        const botonCargar = document.getElementById("cargarBateria");
+
+        botonCargar.addEventListener("click", () => {
+            let valor = meter.value;
+            const intervalo = setInterval(() => {
+                if (valor >= 100) {
+                    clearInterval(intervalo);
+                } else {
+                    valor += 10;
+                    meter.value = valor;
+                }
+            }, 500);
+        });
+    </script>
+
+</body>
+</html>

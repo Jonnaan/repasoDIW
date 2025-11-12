@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sentencias</title>
+    <script src="sentencias.js"></script>
+  </head>
+  <body>
+    <h1>Sentencias en JavaScript</h1>
+    <h2>Punto y Coma</h2>
+    <p> Es Recomendable utilizar ; al final de cada sentencia </p>
+    <p> Podemos escribir varias sentencias en la misma línea separándolas con punto y coma.</p>
+    <script>
+      let a = 5; let b = 10; let c = a + b; alert("Operacion con espacio: " + c);
+    </script>
+    <h2>Espacios en Blanco</h2>
+    <p> Los espacios en blanco son ignorados por el intérprete, pero son importantes para la legibilidad del código.</p>
+    <p> Ejemplo en el html:</p>
+    <script>
+      let x=5;let y=10;let z=x+y;alert("Operacion sin espacio: " + z);
+    </script>
+    <h2>Bloques de codigo</h2>
+    <p> Los bloques de código son secciones de código que se agrupan entre llaves { }.</p>
+    <p>Se utilizan en funciones, bucles, condiciones...</p>
+    <p> Ejemplo con un bucle:</p>
+    <script>
+      function saludar() {
+        let mensaje = "Esto es una función de bucle";
+        let x=1;
+        while(x<=4){
+        alert(mensaje);
+        x=x+1;
+      }}
+      saludar();
+    </script>
+  </body>
+</html>

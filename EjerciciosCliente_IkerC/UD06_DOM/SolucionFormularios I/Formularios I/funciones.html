@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>    
+    <h1>Formulario de Registro de Disco</h1>
+    <form id="formDisco">
+        <label for="nombre">Nombre del Disco:</label><br>
+        <input type="text" id="nombre" name="nombre" required><br>
+
+        <label for="grupo">Grupo/Cantante:</label><br>
+        <input type="text" id="grupo" name="grupo" required><br>
+
+        <label for="año">Año de Publicación:</label><br>
+        <input type="number" id="año" name="año" required><br>
+
+        <label for="genero">Género Musical:</label><br>
+        <select id="genero" name="genero" required>
+            <option value="rock">Rock</option>
+            <option value="pop">Pop</option>
+            <option value="punk">Punk</option>
+            <option value="indie">Indie</option>
+        </select>   <br>
+
+
+        <label for="localizacion">Localización (Estantería):</label><br>
+        <input type="number" id="localizacion" name="localizacion" required><br>
+
+        <label for="prestado">Prestado:</label><br>
+        <input type="checkbox" id="prestado" name="prestado"><br>
+
+        <button type="submit">Guardar Disco</button><br>
+    </form>
+    <script type="module" src="scripts.js"></script>
+</body>
+</html>

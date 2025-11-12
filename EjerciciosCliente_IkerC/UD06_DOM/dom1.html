@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD06DOM1</title>
+    <style>
+        * {
+            font-family: sans-serif;
+            text-align: justify;
+            margin: 1em;
+        }
+
+        .fondo-gris {
+            background-color: grey;
+            padding: 1em;
+        }
+
+        img {
+            width: 10%;
+            height: auto;
+            float: left;
+        }
+
+        #info{
+            background-color: rgb(120, 184, 124);
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejercicio 1 Análisis página</h1>
+    <p>Las ballenas son los animales más grandes que jamás hayan existido. Pertenecen a un grupo de mamíferos marinos
+        conocidos como <a href="https://es.wikipedia.org/wiki/Cetacea">cetáceos</a>. No son peces porque tienen sangre
+        caliente, respiran aire a través de pulmones y dan a luz a crías vivas que se alimentan de leche materna.</p>
+    <p>Tienen un oído excelente y son dos o tres veces más eficientes que los mamíferos terrestres para utilizar el
+        oxígeno del aire que respiran. Las ballenas tienen cajas torácicas colapsables que las ayudan cuando se sumergen
+        a profundidad. Además, poseen una capa de grasa muy gruesa que las aísla para protegerlas del frío.</p>
+    <p>Los científicos creen que las ballenas evolucionaron de mamíferos terrestres de cuatro patas. Ahora, están
+        perfectamente adaptadas a una <a href="https://es.wikipedia.org/wiki/Vida_marina">vida submarina</a>. Tienen un
+        cuerpo aerodinámico y han perdido casi todo el pelo externo para evitar la fricción y mejorar el deslizamiento
+        por el agua. Sus extremidades se transformaron en
+        aletas.</p>
+    <p>Existen dos tipos principales de ballenas: las <a
+            href="https://es.wikipedia.org/wiki/Balaenidae">dentadas</a>dentadas (como el cachalote y la orca) y
+        las <a href="https://es.wikipedia.org/wiki/Balaenidae">barbadas</a> (como la ballena jorobada y la azul). Las
+        abarbadas tienen placas en forma de peines que están formadas por estructuras
+        compuestas de pelos rígidos. Estos forman una red que filtra la comida del agua del mar. La gran mayoría de las
+        grandes ballenas son barbadas y se alimentan fundamentalmente de minúsculas criaturas llamadas krill, parecidas
+        a los camarones.</p>
+    <p>Las ballenas tienen unos orificios en la parte superior de la cabeza llamados “aventadores”, los cuales actúan
+        como nuestros orificios de la nariz. Las ballenas barbadas tienen dos aventadores y las dentadas solo uno.</p>
+    <div class="fondo-gris">
+        <img src="https://www.greenpeace.org/static/planet4-colombia-stateless/2023/09/9f6c025f-gp1sub16_medium_res_with_credit_line-1024x639.jpg"
+            alt="ballena saltando">
+        <p>Una ballena jorobada rompe un arrecife en la Gran Barrera de Coral del Sur durante su migración hacia el sur,
+            Queensland, Australia. Las ballenas jorobadas viajan enormes distancias desde las cálidas aguas de la gran
+            barrera de coral en la costa este de Australia hasta las heladas aguas del Océano Austral frente a la
+            Antártida.
+        </p>
+        <p>Una ballena jorobada (Megaptera novaeangliae) Madre y cría nadan cerca de Ningaloo Reef, Australia. La costa
+            de Australia Occidental es una ruta de migración para la población de ballenas jorobadas de Australia
+            Occidental. Las ballenas jorobadas emprenden una migración anual constante desde las zonas de alimentación
+            antárticas de latitudes altas a las zonas de reproducción de latitudes bajas.
+        </p>
+        <p>
+            Antiguamente, cazar una ballena garantizaba la subsistencia de una comunidad. Los métodos de cacería
+            iniciales eran muy sencillos y casi no cambiaron durante 300 años. Este tipo de cacería no amenazaba a las
+            especies, la cacería masiva comenzó en el siglo XVII.
+        </p>
+    </div>
+    <h2>Soluciones:</h2>
+    <div id="info">
+
+    </div>
+
+    <script>
+        //EJERCICIO 1 AQUÍ
+        /*
+        El número de párrafos de la página.
+        El texto del segundo párrafo.
+        El número de enlaces de la página.
+        La dirección del primer enlace.
+        La dirección del penúltimo enlace.
+        El número de enlaces que apuntan a /wiki/Balaenidae
+        El número de enlaces del primer párrafo.
+        */        
+        let info = document.getElementById("info");
+        let parrafos = document.getElementsByTagName("p");
+        let segundoParrafo = parrafos[1].textContent;
+        let cantidadEnlace = document.getElementsByTagName("a");
+        let primerEnlace = document.getElementsByTagName("a").item(0);
+        let penultimoEnlace = document.getElementsByTagName("a").item(cantidadEnlace.length-2);
+        let enlaceBaleanidae = 0;
+        for (let i = 0; i < cantidadEnlace.length; i++) {
+            if (cantidadEnlace[i].href.includes("/wiki/Balaenidae")) {
+                enlaceBaleanidae++;
+            }
+        }
+        let enlacesPrimerParrafo = parrafos[0].getElementsByTagName("a").length;
+        
+        info.innerHTML ="Número de párrafos: " + parrafos.length +"<br>"+
+                        "Texto del segundo párrafo: " + segundoParrafo +"<br>"+
+                        "Número de enlaces: " + cantidadEnlace.length +"<br>"+
+                        "Primer enlace: " + primerEnlace.href + "<br>"+
+                        "Penultimo enlace: " + penultimoEnlace.href + "<br>"+
+                        "Enlaces Baleanidae: " + enlaceBaleanidae + "<br>"+
+                        "Enlaces del primer párrafo: " + enlacesPrimerParrafo;   
+    </script>
+</body>
+
+</html>

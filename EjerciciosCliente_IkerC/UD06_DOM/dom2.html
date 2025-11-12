@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista dinámica</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+        ul {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Lista dinámica</h2>
+
+    <button id="btnAgregar">Agregar elemento</button>
+    <button id="btnBorrarPrimero">Borrar primer li</button>
+    <button id="btnBorrarUltimo">Borrar último li</button>
+
+    <ul id="lista">
+        <li>Elemento 1</li>
+    </ul>
+
+    <script>
+        const lista = document.getElementById("lista");
+        const btnAgregar = document.getElementById("btnAgregar");
+        const btnBorrarPrimero = document.getElementById("btnBorrarPrimero");
+        const btnBorrarUltimo = document.getElementById("btnBorrarUltimo");
+
+        btnAgregar.addEventListener("click", () => {
+            const texto = prompt("Introduce el texto para el nuevo elemento:");
+            if (texto) {
+                const nuevoLi = document.createElement("li");
+                nuevoLi.textContent = texto;
+                lista.appendChild(nuevoLi);
+            }
+        });
+
+        btnBorrarPrimero.addEventListener("click", () => {
+            if (lista.firstElementChild) {
+                lista.removeChild(lista.firstElementChild);
+            } else {
+                alert("La lista está vacía.");
+            }
+        });
+
+        btnBorrarUltimo.addEventListener("click", () => {
+            if (lista.lastElementChild) {
+                lista.removeChild(lista.lastElementChild);
+            } else {
+                alert("La lista está vacía.");
+            }
+        });
+    </script>
+</body>
+</html>

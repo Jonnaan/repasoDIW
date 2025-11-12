@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breaking Bad</title>
+    <script src="breaking_bad.js"></script>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Producto azul</h1>
+        <form action="" method="POST" id="formulario">
+            <div>
+                <label for="fecha_creacion">Fecha de creación:</label>
+                <input type="date" name="fecha_creacion" id="fecha_creacion" required>
+            </div>
+            <div>
+                <label for="cocinero">Cocinero:</label>
+                <input type="text" name="cocinero" id="cocinero">
+            </div>
+            <div>
+                <label for="destinatario">Destinatario:</label>
+                <input type="text" name="destinatario" id="destinatario">
+            </div>
+            <div>
+                <label for="gramos">Gramos:</label>
+                <input type="number" name="gramos" id="gramos" min="100" max="5000">
+            </div>
+            <div>
+                <label for="composicion">Composición:</label>
+                <input type="text" name="composicion" id="composicion">
+            </div>
+            <div>
+                <label for="num_cuenta">Número de cuenta de EEUU:</label>
+                <input type="text" name="num_cuenta" id="num_cuenta">
+                <span id="confirmacion"></span>
+            </div>
+            <div>
+                <button id="enviar" type="submit">Añadir</button>
+                <button id="limpiar" type="reset">Limpiar</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
