@@ -1,31 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Repaso Examen</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestor de Tareas</title>
+  <style>
+    button {
+      margin: 3px;
+    }
+
+    .filtros {
+      margin-bottom: 15px;
+    }
+  </style>
 </head>
 
 <body>
-    <main>
-        
-        <h3>Agregar Tareas</h3>
+  <main>
+    
 
-        <form action="#" method="get">
-            <label for="tareaInput">Nueva tarea:</label>
-            <input type="text" id="tareaInput" name="tareaInput" required autocomplete="off">
-            <button type="button" id="boton-agregar">Agregar</button>
-        </form>
-        <h1>TE FALTA QUE SE BORRE DEL LOCALSTORAGE AL ELIMINAR / EDITAR...</h1>
-        <br>
-        <hr>
-        <section id="lista">
-            <h3>Lista de Tareas</h3>
-        </section>
-    </main>
-    <script type="module" src="repaso.js"></script>
+    <h2>Agregar Tareas</h2>
 
+    <form action="#" method="get">
+      <label for="tareaInput">Nueva tarea:</label>
+      <input type="text" id="tareaInput" name="tareaInput" required autocomplete="off">
+      <button type="button" id="boton-agregar">Agregar</button>
+    </form>
+    
+    <br>
+    <hr>
+    <h2>Filtro de Tareas</h2>
+    <!-- Botones de filtro -->
+    <div class="filtros">
+      <button id="filtro-todas">Todas</button>
+      <button id="filtro-pendientes">Pendientes</button>
+      <button id="filtro-completadas">Completadas</button>
+    </div>
+    <br>
+    <hr>
+
+    <section id="lista">
+      <h3>Lista de Tareas</h3>
+    </section>
+  </main>
+
+  <script type="module" src="repaso.js"></script>
 </body>
-
 </html>
